@@ -1,0 +1,40 @@
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+
+h1 + div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 30px;
+}
+
+.navigation a h2{
+    font-weight: 400;
+}
+
+.mountain img{
+    width: 100%;
+    height: auto;
+}
+
+.mountain p{
+    margin: 30px 50px 80px;
+}
+
+#equipment {
+    margin: 0 50px 50px;
+}
+
+#equipment dl dd {
+    font-weight: 200;
+}
+
+#equipment dl dd ul{
+    margin: 5px;
+}
+
+#equipment dl dd:not(:last-child) {
+    padding-bottom: 15px;
+}

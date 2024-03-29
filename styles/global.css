@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #FCF8EB;
+    font-family: "Unbounded", sans-serif;
+    line-height: 30px;
+    color: #1F3030;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+}
+
+p {
+    font-weight: 200;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+header {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 30px;
+    background-color: #1F3030;
+    color: white;
+}
+
+header a {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+footer {
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 30px;
+    background-color: #1F3030;
+    color: white;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+footer h1, footer h4 {
+    margin: 0
+}
+
+footer > div:last-child {
+    margin-right: 130px;
+}
+
+footer div div {
+    gap: 10px;
+}
+
+footer div div svg{
+    height: 24px;
+}
