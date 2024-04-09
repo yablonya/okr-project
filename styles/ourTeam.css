@@ -1,0 +1,82 @@
+main {
+    padding: 50px 50px 60px;
+}
+
+.mountain-range {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 120px;
+    width: 102%;
+    height: auto;
+}
+
+.title {
+    font-size: 48px;
+    padding: 140px 30px 75px;
+}
+
+main > div {
+    margin: 0 auto;
+}
+
+.team-member {
+    width: 420px;
+    height: 290px;
+    background-color: #FEFCF5;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(51, 87, 81, 0.25);
+    float: left;
+    margin: 25px;
+}
+
+.upper-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.member-avatar {
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+.text-section h4, .text-section h5 {
+    margin: 0;
+}
+
+.text-section h5 {
+    margin: 0;
+    font-weight: 300;
+}
+
+.team-member p {
+    line-height: 25px;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-top: 60px;
+}

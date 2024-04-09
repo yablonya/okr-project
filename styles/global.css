@@ -14,7 +14,7 @@ a {
     font-size: 16px;
 }
 
-p {
+p, span {
     font-weight: 200;
 }
 
@@ -23,7 +23,6 @@ button:hover {
 }
 
 a:hover {
-    color: inherit;
     text-decoration: underline;
     text-underline-offset: 5px;
 }
@@ -53,11 +52,18 @@ footer {
     color: white;
 }
 
+footer > div {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 footer div {
     display: flex;
     align-items: center;
     gap: 40px;
 }
+
 footer h1, footer h4 {
     margin: 0
 }
