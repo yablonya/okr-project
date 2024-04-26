@@ -11,7 +11,7 @@ main {
     height: auto;
 }
 
-.title {
+#title {
     font-size: 48px;
     padding: 140px 30px 75px;
 }

@@ -5,14 +5,22 @@
   <meta name="author" content="Yablonskyi Danylo">
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/index.js"></script>
   <title>Головна</title>
 </head>
 <body>
 <header>
-  <a href="index.html">Головна</a>
-  <a href="tours.html">Тури</a>
-  <a href="ourTeam.html">Наша команда</a>
-  <a href="encyclopaedia.html">Енциклопедія</a>
+  <img src="images/mountains-logo.png" alt="logo">
+  <div class="header-nav">
+    <a href="index.html">Головна</a>
+    <a href="tours.html">Тури</a>
+    <a href="ourTeam.html">Наша команда</a>
+    <a href="encyclopedia.html">Енциклопедія</a>
+  </div>
+  <span id="username"></span>
+  <script>
+    showUsername();
+  </script>
 </header>
 <main>
   <div class="mountain-range-block">
@@ -90,7 +98,7 @@
 
         <div class="lower-section">
           <h3>Сходження на Говерлу і Петрос (2061 м)</h3>
-          <button>Обрати цей похід</button>
+          <button id="first-button">Обрати цей похід</button>
         </div>
       </div>
 
@@ -117,7 +125,11 @@
 
         <div class="lower-section">
           <h3>Сходження на Говерлу і Петрос (2061 м)</h3>
-          <button>Обрати цей похід</button>
+          <button id="second-button"></button>
+          <script>
+            const firstButtonValue = document.getElementById('first-button').childNodes[0].nodeValue;
+            document.getElementById('second-button').textContent = firstButtonValue;
+          </script>
         </div>
       </div>
     </div>
@@ -139,9 +151,8 @@
         своїх можливостей. Ми любимо ходити в гори і робитимемо це в будь-якій ситуації.
       </li>
       <li>
-        <b>Ми команда мрії</b>
+        <b id="dream-team">Ми команда мрії</b>
         <br>
-        Ми команда мрії
         Гори – це наша мрія, наше життя, і ми горимо цим. А коли твоє хобі стає роботою – це найкращий план реалізації
         своїх можливостей. Ми любимо ходити в гори і робитимемо це в будь-якій ситуації.
       </li>

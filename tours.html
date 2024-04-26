@@ -9,10 +9,28 @@
 </head>
 <body>
 <header>
-  <a href="index.html">Головна</a>
-  <a href="tours.html">Тури</a>
-  <a href="ourTeam.html">Наша команда</a>
-  <a href="encyclopaedia.html">Енциклопедія</a>
+  <img src="images/mountains-logo.png" alt="logo">
+  <div class="header-nav">
+    <a href="index.html">Головна</a>
+    <a href="tours.html">Тури</a>
+    <a href="ourTeam.html">Наша команда</a>
+    <a href="encyclopedia.html">Енциклопедія</a>
+  </div>
+  <span id="username"></span>
+  <script>
+    const wantLogIn = confirm('Хочете авторизуватись?');
+
+    if (wantLogIn) {
+      let username = prompt("Введіть своє ім'я для авторизації");
+
+      if (username) {
+        document.getElementById('username').textContent = username;
+        alert(`Вітаємо, ${username}!`)
+      } else {
+        document.getElementById('username').textContent = 'Не авторизовано';
+      }
+    }
+  </script>
 </header>
 
 <main>
@@ -161,5 +179,6 @@
     </div>
   </div>
 </footer>
+<script src="scripts/tours.js"></script>
 </body>
 </html>
