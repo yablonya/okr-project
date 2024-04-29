@@ -1,6 +1,9 @@
-let username = prompt("Введіть своє ім'я для авторизації");
+function logIn() {
+  let username = prompt("Введіть своє ім'я для авторизації");
+  showUsername(username);
+}
 
-function showUsername() {
+function showUsername(username) {
   if (username) {
     document.getElementById('username').outerHTML = `
         <h4 
@@ -8,7 +11,9 @@ function showUsername() {
               display: flex;
               justify-content: center;
               gap: 8px;
-              align-items: center;"
+              align-items: center;
+              margin: 0;
+              "
           >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -49,3 +54,46 @@ function showUsername() {
 function showDeveloperInfo(surname, name, position = 'Front-end developer') {
   alert(`Вітаємо нашого розробника!\n\nПрізвище: ${surname}\nІм'я: ${name}\nПосада: ${position}`)
 }
+
+function signUpForTour() {
+  alert('Ви обрали цей тур!');
+}
+
+const menuButton = document.getElementById('menu-button');
+const menuBlock = document.getElementById('side-menu');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuButton.addEventListener('click', toggleSideMenu);
+menuOverlay.addEventListener('click', toggleSideMenu)
+
+function toggleSideMenu(event) {
+  const clickedElement = event.target;
+
+  menuOverlay.style.display = clickedElement === menuButton ? 'block' : 'none';
+  menuOverlay.style.opacity = clickedElement === menuButton ? '1' : '0';
+  menuBlock.style.left = clickedElement === menuButton ? '0' : '-300px';
+}
+
+class Menu {
+  constructor(elem) {
+    this.elem = elem;
+    elem.onclick = this.onClick.bind(this);
+  }
+
+  becomeInstructor() { alert('Хочу стати інстурктором'); }
+
+  signUpForHike() { alert('Записатись в похід'); }
+
+  searchTour() { alert('Знайти тур'); }
+
+  getConsultation() { alert('Отримати консультацію'); }
+
+  onClick(event) {
+    let action = event.target.dataset.action;
+
+    if (action) { this[action](); }
+  }
+}
+
+new Menu(menuBlock);
+

@@ -23,3 +23,12 @@ function changeLocation () {
   location.href = 'index.html';
 }
 
+const objectHandler = {
+  handleEvent(object) {
+    alert(`${object.currentTarget}\n`)
+  }
+}
+
+document.getElementById('encyclopedia-title').addEventListener('click', objectHandler);
+//document.getElementById('encyclopedia-title').removeEventListener('click', objectHandler);
+
