@@ -76,7 +76,7 @@ function toggleSideMenu(event) {
 
 class Menu {
   constructor(elem) {
-    this.elem = elem;
+    this._elem = elem;
     elem.onclick = this.onClick.bind(this);
   }
 
