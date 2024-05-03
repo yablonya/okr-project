@@ -1,7 +1,5 @@
-function logIn() {
-  let username = prompt("Введіть своє ім'я для авторизації");
-  showUsername(username);
-}
+let username = prompt("Введіть своє ім'я для авторизації");
+showUsername(username);
 
 function showUsername(username) {
   if (username) {
@@ -96,4 +94,36 @@ class Menu {
 }
 
 new Menu(menuBlock);
+
+const stickman = document.getElementById('stickman');
+const stickmanField = document.getElementById('stickman-field');
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+stickman.addEventListener('mousedown', function(event) {
+  event.preventDefault();
+  isDragging = true;
+
+  offsetX = event.clientX - stickman.offsetLeft;
+  offsetY = event.clientY - stickman.offsetTop;
+  stickman.style.cursor = 'grabbing';
+});
+
+// Обробник події mousemove на полі
+stickmanField.addEventListener('mousemove', function(event) {
+  if (isDragging) {
+    let newX = event.clientX - offsetX;
+    let newY = event.clientY - offsetY;
+
+    stickman.style.left = newX + 'px';
+    stickman.style.top = newY + 'px';
+  }
+});
+
+stickmanField.addEventListener('mouseup', function() {
+  isDragging = false;
+  stickman.style.cursor = 'grab';
+});
 

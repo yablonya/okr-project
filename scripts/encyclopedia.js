@@ -32,3 +32,22 @@ const objectHandler = {
 document.getElementById('encyclopedia-title').addEventListener('click', objectHandler);
 //document.getElementById('encyclopedia-title').removeEventListener('click', objectHandler);
 
+const listOfNecessary = document.getElementById('list-of-necessary');
+
+for (let item of listOfNecessary.children) {
+  item.addEventListener('mouseover', {
+    handleEvent(event) {
+      event.target.style.fontWeight = '500';
+      if (event.relatedTarget.parentElement.tagName === 'UL') {
+        event.relatedTarget.style.color = '#949494';
+      }
+    }
+  })
+
+  item.addEventListener('mouseout', {
+    handleEvent(event) {
+      event.target.style.fontWeight = '200';
+    }
+  })
+}
+
