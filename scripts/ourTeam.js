@@ -1,18 +1,20 @@
-const bgColorButton = document.getElementById('bgcolor-button');
+$(document).ready(function () {
+  const $bgColorButton = $('#bgcolor-button');
 
-bgColorButton.addEventListener('click', changeBgColor);
-bgColorButton.addEventListener('click', hideBgColorButton);
+  $bgColorButton.click(changeBgColor);
+  $bgColorButton.click(hideBgColorButton);
+
+  function hideBgColorButton() {
+    $bgColorButton.css('opacity', '0');
+    setTimeout(() => {
+      $bgColorButton.css('opacity', '1');
+    }, 30000)
+  }
+})
 
 function changeBgColor() {
-  document.body.style.backgroundColor = '#c7c1af';
+  $('body').css('backgroundColor', '#c7c1af');
   setTimeout(() => {
-    document.body.style.backgroundColor = '#FCF8EB';
-  }, 30000)
-}
-
-function hideBgColorButton() {
-  bgColorButton.style.opacity = '0';
-  setTimeout(() => {
-    bgColorButton.style.opacity = '1';
+    $('body').css('backgroundColor', '#FCF8EB');
   }, 30000)
 }

@@ -63,6 +63,11 @@ header img {
     font-weight: 300;
 }
 
+.header-nav span:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
 footer {
     display: flex;
     gap: 50px;

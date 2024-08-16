@@ -1,47 +1,48 @@
-const certainMountain = confirm('Хочете отримати список турів пов\'язаних з певною вершиною?');
+$(document).ready(function () {
+  const certainMountain = confirm('Хочете отримати список турів пов\'язаних з певною вершиною?');
 
-if (certainMountain) {
-  const mountainName = prompt('Введіть назву гори');
+  if (certainMountain) {
+    const mountainName = prompt('Введіть назву гори');
 
-  if (mountainName) {
-    const allTours = document.querySelectorAll('li');
+    if (mountainName) {
+      $('li').each(function() {
+        const $this = $(this);
+        const mountainsList = $this.find('p').eq(1).text();
 
-    for (let tour of allTours) {
-      const mountainsList = tour.querySelectorAll('p')[1].textContent;
+        if (mountainsList === 'Вершини') return;
 
-      if (mountainsList === 'Вершини') continue;
+        const tourIncludesMount = mountainsList.includes(mountainName);
 
-      const tourIncludesMount = mountainsList.includes(mountainName);
+        if (!tourIncludesMount) {
+          $this.remove();
+        }
+      });
 
-      if (!tourIncludesMount) {
-        tour.remove();
-      }
+      alert(`Тури з вершиною ${mountainName} для вас`)
     }
-
-    alert(`Тури з вершиною ${mountainName} для вас`)
   }
-}
+  const  $tourList = $('#tours-list');
+  $tourList.click(highlightListItem);
 
-const tourList = document.getElementById('tours-list');
-tourList.addEventListener('click', highlightListItem);
+  $(document).click(function(event) {
+    const $target = $(event.target);
 
-function highlightListItem(event) {
-  const clickedElement = event.target;
-  if (clickedElement.tagName === 'BUTTON') return;
+    if ($target.data('sign') !== undefined) {
+      alert('Ви записались на тур');
+    }
+  });
 
-  const clickedListItem = clickedElement.closest("li");
-  if (tourList.children[0] === clickedListItem) return;
+  function highlightListItem(event) {
+    const $clickedElement = $(event.target);
+    if ($clickedElement.is('button')) return;
 
-  clickedListItem.style.backgroundColor = '#e8e8e8';
+    const $clickedListItem = $clickedElement.closest("li");
+    if ($tourList.children().first().is($clickedListItem)) return;
 
-  setTimeout(() => {
-    clickedListItem.style.backgroundColor = '#FEFCF5';
-  }, 3000);
-}
+    $clickedListItem.css('backgroundColor', '#e8e8e8');
 
-document.addEventListener('click', function(event) {
-  if (event.target.dataset.sign !== undefined) {
-    alert('Ви записались на тур');
+    setTimeout(() => {
+      $clickedListItem.css('backgroundColor', '#FEFCF5');
+    }, 3000);
   }
 })
-

@@ -5,6 +5,7 @@
   <meta name="author" content="Yablonskyi Danylo">
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>Головна</title>
 </head>
 <body>
@@ -33,9 +34,6 @@
     <a href="encyclopedia.html">Енциклопедія</a>
   </div>
   <span id="username"></span>
-  <script>
-    logIn();
-  </script>
 </header>
 
 <main>
@@ -149,10 +147,8 @@
           <h3>Сходження на Говерлу і Петрос (2061 м)</h3>
           <button id="second-button"></button>
           <script>
-            const firstButtonValue = document.getElementById('first-button').childNodes[0].nodeValue;
-            const secondButton = document.getElementById('second-button');
-            secondButton.textContent = firstButtonValue;
-            secondButton.onclick = signUpForTour;
+            const firstButtonValue = $('#first-button').text();
+            $('#second-button').text(firstButtonValue).click(signUpForTour);
           </script>
         </div>
       </div>

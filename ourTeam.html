@@ -5,6 +5,7 @@
   <meta name="author" content="Yablonskyi Danylo">
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/ourTeam.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>Наша команда</title>
 </head>
 <body>
@@ -26,10 +27,10 @@
     let username = prompt("Введіть своє ім'я для авторизації");
 
     if (username) {
-      document.getElementById('username').textContent = username;
+      $('#username').text(username);
       alert(`Вітаємо, ${username}!`)
     } else {
-      document.getElementById('username').textContent = 'Не авторизовано';
+      $('#username').text('Не авторизовано');
     }
   </script>
 </header>
